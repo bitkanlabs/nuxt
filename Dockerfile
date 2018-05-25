@@ -9,8 +9,10 @@ RUN yarn config set registry https://registry.npm.taobao.org
 ONBUILD ARG NODE_ENV
 ONBUILD ENV NODE_ENV $NODE_ENV
 ONBUILD COPY package.json yarn.lock nuxt.config.js /usr/src/app/
-ONBUILD COPY .nuxt /usr/src/app/.nuxt
 ONBUILD RUN yarn install --non-interactive --prod && yarn cache clean
+
+ONBUILD COPY nuxt.config.js /usr/src/app/
+ONBUILD COPY .nuxt /usr/src/app/.nuxt
 
 # ONBUILD RUN yarn run build
 
