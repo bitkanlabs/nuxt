@@ -11,7 +11,7 @@ Step 2: Run `docker build`
 $ docker build -t your-image-name:with-tag .
 ```
 
-Or you can use docker compose with `docker-compose.xml`
+Or you can use docker compose with `docker-compose.yml`
 ```
 version: '3'
 
